@@ -6,7 +6,7 @@ td {
     height: 85px;
 }
 
-.pik-type, .pik-total {
+.pik-type, .pik-img, .pik-total {
     height: inherit;
 }
 
