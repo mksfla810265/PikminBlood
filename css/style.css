@@ -2,6 +2,18 @@ body {
     background-color: #333333;
 }
 
-/* .container {
-    margin: 5px 0 5px 0;
-} */
+td {
+    height: 85px;
+}
+
+.pik-type, .pik-total {
+    height: inherit;
+}
+
+p {
+    margin: 0;
+}
+
+.not-own {
+    filter: grayscale(100%);
+}
