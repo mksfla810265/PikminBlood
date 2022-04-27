@@ -58,7 +58,9 @@
 										</td>
 										<td>
 											<div class="pik-img d-flex justify-content-center align-items-center">
-												<img class="mx-1" :class="isHave" :src="'images/'+item.img+'.jpg'" :alt="item.img" width="60" v-for="(item, i) in PikminArr" />
+												<img class="mx-1" :class="{'not-own': item.isHave}" :src="'images/'+item.img+'.jpg'"
+													:alt="item.img" v-for="(item, i) in Restaurant" :key="item.img"
+													@click="changeImgColor('Restaurant', i)" width="60" />
 
 												<!-- <img class="mx-1 not-own" src="images/Red.jpg" alt="Red" width="60">
 												<img class="mx-1" src="images/Yellow.jpg" alt="Yellow" width="60">
@@ -83,13 +85,17 @@
 										</td>
 										<td>
 											<div class="pik-img d-flex justify-content-center align-items-center">
-												<img class="mx-1" src="images/Red.jpg" alt="Red" width="60">
+												<img class="mx-1" :class="{'not-own': item.isHave}" :src="'images/'+item.img+'.jpg'"
+													:alt="item.img" v-for="(item, i) in Cafe" :key="item.img"
+													@click="changeImgColor('Cafe', i)" width="60" />
+
+												<!-- <img class="mx-1" src="images/Red.jpg" alt="Red" width="60">
 												<img class="mx-1 not-own" src="images/Yellow.jpg" alt="Yellow" width="60">
 												<img class="mx-1 not-own" src="images/Blue.jpg" alt="Blue" width="60">
 												<img class="mx-1" src="images/White.jpg" alt="White" width="60">
 												<img class="mx-1" src="images/Purple.jpg" alt="Purple" width="60">
 												<img class="mx-1 not-own" src="images/Pink.jpg" alt="Pink" width="60">
-												<img class="mx-1" src="images/Gray.jpg" alt="Gray" width="60">
+												<img class="mx-1" src="images/Gray.jpg" alt="Gray" width="60"> -->
 											</div>
 										</td>
 										<td>
