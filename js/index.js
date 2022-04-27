@@ -30,14 +30,7 @@ const app = {
 
 		const changeImgColor = (Location, index) => {
 			state[Location].Pikmins[index].noHave = !state[Location].Pikmins[index].noHave;
-
-			let count = 0;
-			for (const item of state[Location].Pikmins) {
-				if (item.noHave === false) {
-					count++;
-				}
-			}
-			state[Location].total = count;
+			state[Location].total = state[Location].Pikmins.filter(e => !e.noHave).length;
 		}
 
 		return {
