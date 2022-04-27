@@ -58,9 +58,10 @@
 										</td>
 										<td>
 											<div class="pik-img d-flex justify-content-center align-items-center">
-												<img class="mx-1" :class="{'not-own': item.isHave}" :src="'images/'+item.img+'.jpg'"
-													:alt="item.img" v-for="(item, i) in Restaurant" :key="item.img"
-													@click="changeImgColor('Restaurant', i)" width="60" />
+												<img class="mx-1" :class="{'not-own': item.noHave}" :src="'images/'+item.img+'.jpg'"
+													:alt="item.img" v-for="(item, i) in Restaurant.Pikmins" :key="item.img"
+													@click="changeImgColor('Restaurant', i)" width="60"
+													style="border-radius: 5px;" />
 
 												<!-- <img class="mx-1 not-own" src="images/Red.jpg" alt="Red" width="60">
 												<img class="mx-1" src="images/Yellow.jpg" alt="Yellow" width="60">
@@ -73,7 +74,7 @@
 										</td>
 										<td>
 											<div class="pik-total d-flex justify-content-center align-items-center">
-												<p>0</p>
+												<p>{{ Restaurant.total }}</p>
 											</div>
 										</td>
 									</tr>
@@ -85,9 +86,9 @@
 										</td>
 										<td>
 											<div class="pik-img d-flex justify-content-center align-items-center">
-												<img class="mx-1" :class="{'not-own': item.isHave}" :src="'images/'+item.img+'.jpg'"
-													:alt="item.img" v-for="(item, i) in Cafe" :key="item.img"
-													@click="changeImgColor('Cafe', i)" width="60" />
+												<img class="mx-1" :class="{'not-own': item.noHave}" :src="'images/'+item.img+'.jpg'"
+													:alt="item.img" v-for="(item, i) in Cafe.Pikmins" :key="item.img"
+													@click="changeImgColor('Cafe', i)" width="60" style="border-radius: 5px;" />
 
 												<!-- <img class="mx-1" src="images/Red.jpg" alt="Red" width="60">
 												<img class="mx-1 not-own" src="images/Yellow.jpg" alt="Yellow" width="60">
@@ -100,7 +101,7 @@
 										</td>
 										<td>
 											<div class="pik-total d-flex justify-content-center align-items-center">
-												<p>0</p>
+												<p>{{ Cafe.total }}</p>
 											</div>
 										</td>
 									</tr>
