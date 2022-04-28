@@ -50,58 +50,22 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
+									<tr v-for="(location, i) in Data.User1" :key="location.locationName">
 										<td>
 											<div class="pik-type d-flex justify-content-center align-items-center">
-												<p>餐廳 Restaurant</p>
+												<p>{{ location.locationName }}</p>
 											</div>
 										</td>
 										<td>
 											<div class="pik-img d-flex justify-content-center align-items-center">
 												<img class="mx-1" :class="{'not-own': item.noHave}" :src="'images/'+item.img+'.jpg'"
-													:alt="item.img" v-for="(item, i) in Restaurant.Pikmins" :key="item.img"
-													@click="changeImgColor('Restaurant', i)" width="60"
-													style="border-radius: 5px;" />
-
-												<!-- <img class="mx-1 not-own" src="images/Red.jpg" alt="Red" width="60">
-												<img class="mx-1" src="images/Yellow.jpg" alt="Yellow" width="60">
-												<img class="mx-1" src="images/Blue.jpg" alt="Blue" width="60">
-												<img class="mx-1" src="images/White.jpg" alt="White" width="60">
-												<img class="mx-1 not-own" src="images/Purple.jpg" alt="Purple" width="60">
-												<img class="mx-1" src="images/Pink.jpg" alt="Pink" width="60">
-												<img class="mx-1 not-own" src="images/Gray.jpg" alt="Gray" width="60"> -->
+													:alt="item.img" v-for="(item, j) in location.Pikmins" :key="item.img"
+													@click="changeImgColor('User1', i, j)" width="60" style="border-radius: 5px;" />
 											</div>
 										</td>
 										<td>
 											<div class="pik-total d-flex justify-content-center align-items-center">
-												<p>{{ Restaurant.total }}</p>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<div class="pik-type d-flex justify-content-center align-items-center">
-												<p>咖啡廳 Café</p>
-											</div>
-										</td>
-										<td>
-											<div class="pik-img d-flex justify-content-center align-items-center">
-												<img class="mx-1" :class="{'not-own': item.noHave}" :src="'images/'+item.img+'.jpg'"
-													:alt="item.img" v-for="(item, i) in Cafe.Pikmins" :key="item.img"
-													@click="changeImgColor('Cafe', i)" width="60" style="border-radius: 5px;" />
-
-												<!-- <img class="mx-1" src="images/Red.jpg" alt="Red" width="60">
-												<img class="mx-1 not-own" src="images/Yellow.jpg" alt="Yellow" width="60">
-												<img class="mx-1 not-own" src="images/Blue.jpg" alt="Blue" width="60">
-												<img class="mx-1" src="images/White.jpg" alt="White" width="60">
-												<img class="mx-1" src="images/Purple.jpg" alt="Purple" width="60">
-												<img class="mx-1 not-own" src="images/Pink.jpg" alt="Pink" width="60">
-												<img class="mx-1" src="images/Gray.jpg" alt="Gray" width="60"> -->
-											</div>
-										</td>
-										<td>
-											<div class="pik-total d-flex justify-content-center align-items-center">
-												<p>{{ Cafe.total }}</p>
+												<p>{{ location.total }}</p>
 											</div>
 										</td>
 									</tr>
@@ -115,8 +79,11 @@
 			</div>
 		</div>
 		<div class="text-white position-fixed end-0 top-0 pe-1">ver 1.0</div>
+
 	</div>
 
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<!-- bootstrap -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 	<!-- fontawesome -->
