@@ -16,7 +16,6 @@ const app = {
 			fetch("./data/init.json")
 				.then(res => res.json())
 				.then(data => {
-					//console.log("Data", data);
 					state.Data = data;
 				});
 		}
